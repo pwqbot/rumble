@@ -109,7 +109,7 @@ constexpr detail::Id<Pred> pred() {
     return detail::Id<Pred>();
 }
 
-template <typename T, auto AST>
+template <typename T, auto &&AST>
 using REQUIRES = std::enable_if_t<detail::constraint<T>(AST)>;
 
 } // namespace constraint
