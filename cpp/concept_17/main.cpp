@@ -145,7 +145,17 @@ constexpr auto fuck = isPod && can_allocate;
 template <typename T, typename = REQUIRES<T, fuck>>
 void need_fuck() {}
 
+int add(int x, int y) {
+    return x + y;
+}
+
 void test() {
+    auto r = add(1, 2);
+
+    // FIXME: Inlay hint not work on const
+    auto       pp  = pred<BlockAllocator>();
+    const auto ppp = pred<BlockAllocator>();
+
     struct wd {
         void         deallocate_block(memory_block);
         memory_block allocate_block();
