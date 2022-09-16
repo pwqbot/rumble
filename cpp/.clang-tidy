@@ -1,10 +1,10 @@
-# Checks: > 
-#     clang-diagnostic-*, 
-#     clang-analyzer-*,
-#     cppcoreguidelines-*,
-#     modernize-*,
-#     google-*,
-#     performance-*,
-#     readability-*,
-#     -readability-identifier-length,
-#     -readability-isolate-declaration
+Checks: > 
+    clang-diagnostic-*, 
+    clang-analyzer-*,
+    cppcoreguidelines-*,
+    modernize-*,
+    google-*,
+    performance-*,
+    readability-*,
+    -readability-identifier-length,
+    -readability-isolate-declaration
