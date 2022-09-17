@@ -1,0 +1,3 @@
+[submodule "cpp/hands-on-design-cpp"]
+	path = cpp/hands-on-design-cpp
+	url = git@github.com:pwqbot/hands-on-design-cpp.git
