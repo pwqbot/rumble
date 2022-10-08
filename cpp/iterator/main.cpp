@@ -33,8 +33,8 @@ struct MyIter {
     using pointer           = T *;
     using reference         = T &;
 
-    T *current_;
-    T *next_;
+    T *current_{};
+    T *next_{};
 };
 
 template <typename Val>
