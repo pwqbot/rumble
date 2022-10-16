@@ -29,3 +29,6 @@ rumble rumble
 ### LRU
 - level db
     https://github.com/google/leveldb/blob/479a1f4e9b1138d7dda4db5078aadc4e7b845a85/util/cache.cc 
+
+### variadic parameter packs
+- https://www.scs.stanford.edu/~dm/blog/param-pack.html#homogeneous-intro
