@@ -10,11 +10,11 @@
 template <template <typename, typename, typename> typename T, typename Key,
           typename Value, typename Hash = std::hash<Key>>
 concept is_lru = requires(T<Key, Value, Hash> v, Key key, Value value) {
-    { v.Put(key, value) } -> std::same_as<void>;
-    { v.Get(key) } -> std::same_as<std::optional<Value>>;
-    {v.Clear()};
-    {v.Print()};
-};
+                     { v.Put(key, value) } -> std::same_as<void>;
+                     { v.Get(key) } -> std::same_as<std::optional<Value>>;
+                     { v.Clear() };
+                     { v.Print() };
+                 };
 
 template <typename Key_, typename Value_, typename Hash_ = std::hash<Key_>>
 struct LRU {
@@ -72,7 +72,7 @@ struct LRU {
 
 template <template <typename, typename, typename> typename LRU, typename Key_,
           typename Value_, typename Hash = std::hash<Key_>>
-requires is_lru<LRU, Key_, Value_, Hash>
+    requires is_lru<LRU, Key_, Value_, Hash>
 struct LRUPro {
     std::vector<LRU<Key_, Value_, Hash>> lrus_;
     std::size_t                          bits_;
