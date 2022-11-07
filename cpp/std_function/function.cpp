@@ -1,5 +1,6 @@
 #include <functional>
 #include <iostream>
+#include <memory>
 
 template <typename T>
 struct CallableBase;
@@ -37,7 +38,7 @@ struct Function<R_(Args_...)> {
 
     Function(Function const &f) {}
 
-    template<typename ...Args>
+    template <typename... Args>
     R_ operator()(Args &&...args) {
         return f_->invoke(std::forward<Args>(args)...);
     }
@@ -48,7 +49,7 @@ struct Function<R_(Args_...)> {
 struct A {
     A() = default;
     A(const A &a) { std::cerr << "copy" << std::endl; }
-    A(A& a) { std::cerr << "copy" << std::endl; }
+    A(A &a) { std::cerr << "copy" << std::endl; }
 };
 
 int main() {
@@ -56,12 +57,12 @@ int main() {
         std::cerr << "call it" << std::endl;
         return 5;
     };
-    std::function<int(A&)> ff = [](A &x) -> int {
+    std::function<int(A &)> ff = [](A &x) -> int {
         std::cerr << "call it" << std::endl;
         return 5;
     };
     /* std::function<int(int)> ff; */
-    A wd;
+    A    wd;
     auto sb = [](A x) -> int {
         std::cerr << "call it" << std::endl;
         return 5;
