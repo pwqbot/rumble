@@ -82,4 +82,10 @@ void view() {
     auto view = vec | ranges::views::filter([](int i) { return i % 2 == 0; }) |
                 ranges::views::transform([](int i) { return i * i; });
     fmt::print("{}", view);
+
+
+    std::string s = "abcd";
+    std::string b = "qwerttytyy";
+    ranges::views::zip(s, b);
+    
 }
