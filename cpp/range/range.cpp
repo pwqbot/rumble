@@ -83,9 +83,7 @@ void view() {
                 ranges::views::transform([](int i) { return i * i; });
     fmt::print("{}", view);
 
-
     std::string s = "abcd";
     std::string b = "qwerttytyy";
     ranges::views::zip(s, b);
-    
 }
